@@ -1,13 +1,13 @@
 class PlaylistInverterController < ApplicationController
   def index
-    @auth_link = Yt::Account.new(scopes: ["youtube"], redirect_uri: "http://localhost:3000/invert").authentication_url
+    @auth_link = Yt::Account.new(scopes: ["youtube"], redirect_uri: "#{ENV["BASE_REDIRECT_URI"]}/invert").authentication_url
   end
   def invert_index
     @code = params[:code]
   end
   def invert_now
     Yt.configure do |config| config.log_level = :debug end
-    @account = Yt::Account.new authorization_code: params[:playlist_data][:code], redirect_uri: "http://localhost:3000/invert"
+    @account = Yt::Account.new authorization_code: params[:playlist_data][:code], redirect_uri: "#{ENV["BASE_REDIRECT_URI"]}/invert"
     playlist = Yt::Playlist.new url: params[:playlist_data][:playlist_url]
     ids = Array.new
     @inverted_playlist = @account.create_playlist title: "#{playlist.title} inverted by ytinverter"
