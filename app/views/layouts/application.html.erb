@@ -5,17 +5,26 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css" />
   </head>
 
   <body>
+    <div class="fork-me-wrapper">
+      <div class="fork-me">
+        <a class="fork-me-link" href="https://github.com/kustom666/youtube-inverter">
+          <span class="fork-me-text">Fork Me On GitHub</span>
+        </a>
+      </div>
+    </div>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <a class="navbar-brand" href="/">Youtube Inverter</a>
     </nav>
+
     <div class="container">
       <div class="center-content">
         <%= yield %>
       </div>
     </div>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
