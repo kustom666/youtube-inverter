@@ -3,7 +3,6 @@ class PlaylistInverterController < ApplicationController
     @auth_link = Yt::Account.new(scopes: ["youtube"], redirect_uri: "http://localhost:3000/invert").authentication_url
   end
   def invert_index
-    #@account = Yt::Account.new authorization_code: params[:code], redirect_uri: "http://localhost:3000/invert"
     @code = params[:code]
   end
   def invert_now
@@ -14,7 +13,6 @@ class PlaylistInverterController < ApplicationController
     @inverted_playlist = @account.create_playlist title: "#{playlist.title} inverted by ytinverter"
     playlist.playlist_items.each do |item|
       ids.push item.video.id
-      #playlist.add_video item.video.id
     end
 
     ids.reverse.each do |id|

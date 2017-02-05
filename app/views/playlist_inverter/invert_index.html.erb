@@ -1,6 +1,10 @@
-<h1>Invert!</h1>
+<h1>Invert your playlist</h1>
+<p>
+  Great, you're authenticated! Now all we need is the link to the playlist
+  you wanna invert.
+</p>
 <%= form_for :playlist_data, url: inverted_path do |f| %>
   <%= f.hidden_field :code, value: @code %>
   <%= f.text_field :playlist_url %>
-  <%= f.submit %>
+  <%= f.submit "Invert this playlist", class: "btn btn-primary" %>
 <% end %>
