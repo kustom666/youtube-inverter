@@ -1,0 +1,6 @@
+<h2>Congratulations, your playlist has been inverted</h2>
+<p>The inverted playlist has been saved under your youtube account as a private
+  <!-- playlist for added privacy. You can find it on <%= link_to "your account page",  %> -->
+<% @inverted_playlist.playlist_items.each do |item| %>
+  <%= item.video.title %>
+<% end %>

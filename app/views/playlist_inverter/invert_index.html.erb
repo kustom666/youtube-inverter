@@ -1,0 +1,6 @@
+<h1>Invert!</h1>
+<%= form_for :playlist_data, url: inverted_path do |f| %>
+  <%= f.hidden_field :code, value: @code %>
+  <%= f.text_field :playlist_url %>
+  <%= f.submit %>
+<% end %>
