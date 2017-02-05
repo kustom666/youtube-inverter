@@ -1,24 +1,15 @@
 # README
+Youtube inverter is a website made to invert already made Youtube playlists.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Installation
 
-Things you may want to cover:
+Simply clone the repository to your server like so:
+git clone https://github.com/kustom666/youtube-inverter
 
-* Ruby version
+You will need to set three environment variables as follows:
+  - YT_CLIENT_ID : the oauth client id for your app
+  - YT_CLIENT_SECRET : the oauth client secret for your app
+  - YT_API_KEY : your app's youtube api key
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Finally, change the redirect_uri in PlaylistInverterController with the url
+to your own redirection.
